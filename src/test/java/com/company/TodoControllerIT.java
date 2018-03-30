@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import java.net.URI;
 import java.util.Date;
-import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.Matchers.containsString;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Main.class,webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -37,8 +37,10 @@ public class TodoControllerIT {
         Todo todo = new Todo(-1, "Jill", "Learn Hibernate", new Date(), false);
         URI location = template
                 .postForLocation(createURL("/users/Jill/todos"),todo);
+
         Assert.assertThat(location.getPath(),containsString("/users/Jill/todos/4"));
     }
+
 
 
     private String createURL(String uri){
