@@ -34,11 +34,12 @@ public class GBCIntegrationTest {
                 .getForEntity(createURL("/greetingWithObject"),String.class);
         Assert.assertThat(response.getBody(),containsString("hey"));
     }
+
     @Test
     public void welcomeWithParams() throws Exception{
         ResponseEntity<String> response = template
                 .getForEntity(createURL("/greetingWithParameter/name/Victor"),String.class);
-        Assert.assertThat(response.getBody(),containsString("hey"));
+        Assert.assertThat(response.getBody(),containsString("hello"));
     }
 
     private String createURL(String uri){

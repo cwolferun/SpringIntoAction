@@ -37,7 +37,7 @@ public class GBCTest {
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString(
-                        "Hello World")));
+                        "hey")));
 
     }
 
