@@ -1,5 +1,6 @@
 package com.company;
 
+import com.Main;
 import org.junit.Assert;
 import static org.hamcrest.CoreMatchers.*;
 import org.junit.Test;

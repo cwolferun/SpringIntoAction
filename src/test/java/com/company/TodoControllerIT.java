@@ -1,5 +1,6 @@
 package com.company;
 
+import com.Main;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
