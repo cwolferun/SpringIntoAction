@@ -14,6 +14,7 @@ public class GreetingBeanController {
     public String welcome(){
         return "Hello World";
     }
+
     @GetMapping("/greetingWithParameter/name/{name}")
     public GreetingBean welcomeParam(@PathVariable String name){
         return new GreetingBean(String.format(helloWorldTemplate, name));

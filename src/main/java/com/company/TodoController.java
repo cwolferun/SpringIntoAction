@@ -1,6 +1,8 @@
 package com.company;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
@@ -19,8 +21,11 @@ public class TodoController {
     @Autowired
     private TodoService todoService;
 
+ private    Logger logger =  LoggerFactory.getLogger(this.getClass());
+
     @GetMapping("/users/{name}/todos")
     public List<Todo> retrieveTodos(@PathVariable String name){
+        logger.info("called someones todos");
         return todoService.retrieveTodos(name);
     }
 
