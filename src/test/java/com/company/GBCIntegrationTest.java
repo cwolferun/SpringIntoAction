@@ -1,5 +1,6 @@
 package com.company;
 
+import com.Main;
 import org.junit.Assert;
 import static org.hamcrest.CoreMatchers.*;
 import org.junit.Test;
@@ -28,6 +29,7 @@ public class GBCIntegrationTest {
                 .getForEntity(createURL("/greeting"),String.class);
         Assert.assertThat(response.getBody(),is(equalTo("Hello World")));
     }
+
     @Test
     public void welcomeWithObject() throws Exception{
         ResponseEntity<String> response = template
