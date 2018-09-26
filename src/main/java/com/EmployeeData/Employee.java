@@ -8,13 +8,13 @@ import java.util.UUID;
 @Entity
 @Table(name = "employee")
 @ToString @AllArgsConstructor @NoArgsConstructor @Getter @Setter
-class Employee {
+public class Employee {
 
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid")
     @Column(name = "eid")
-    private UUID id;
+    private String id;
 
     private String name;
     private int age;
@@ -23,5 +23,6 @@ class Employee {
     private int salary;
     private String department;
     private String ldap;
+
 
 }
